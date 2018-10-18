@@ -1,3 +1,5 @@
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -10,18 +12,12 @@ import java.net.URL;
 public class iex {
 
     public static void main (String args[]) throws IOException {
-        OkHttpClient client = new OkHttpClient();
 
-        Request request = new Request.Builder()
-                .url("https://api.iextrading.com/ew")
-                .get()
-                .addHeader("Content-Type", "application/json")
-                .addHeader("cache-control", "no-cache")
-                .addHeader("Postman-Token", "a06d2a01-9a5b-4664-8a54-f69bb665865e")
-                .build();
+        JsonObject test = IEXData.getEarnings("aapl");
 
-        Response response = client.newCall(request).execute();
+        String a = test.get("earnings").toString();
 
-        System.out.println(response.body().string());
+        System.out.println(a);
+
     }
 }

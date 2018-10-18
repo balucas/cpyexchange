@@ -24,6 +24,11 @@
             <artifactId>okhttp</artifactId>
             <version>3.11.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.twilio.sdk</groupId>
+            <artifactId>twilio</artifactId>
+            <version>7.27.0</version>
+        </dependency>
     </dependencies>
 
 </project>
